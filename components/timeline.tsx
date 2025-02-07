@@ -1,6 +1,6 @@
 'use client'
 
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { motion, useScroll } from 'framer-motion'
 import { PinCard } from './pin-card'
 import { TracingBeam } from './tracing-beam'
 import { useRef } from 'react'
@@ -26,7 +26,7 @@ const timelineColors = {
 
 export function Timeline({ items }: TimelineProps) {
   const containerRef = useRef<HTMLDivElement>(null)
-  const { scrollYProgress } = useScroll({
+  const {  } = useScroll({
     target: containerRef,
     offset: ['end end', 'start start']  // Reversed direction
   })
