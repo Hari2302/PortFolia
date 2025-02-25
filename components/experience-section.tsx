@@ -4,7 +4,7 @@ import { Timeline } from './timeline'
 
 const experiences = [
   {
-    date: '2025 - Present',
+    date: '2024 - Present',
     title: 'Software Developer at Brain Insight Company',
     description: 'Currently working on software development projects, focusing on delivering high-quality solutions and improving team efficiency.',
     color: 'primary'
@@ -14,14 +14,14 @@ const experiences = [
     title: 'Intern in C#/.NET Framework',
     description: 'Gained hands-on experience in developing applications using C# and .NET Framework, enhancing problem-solving and coding skills.',
     color: 'blue'
-  }
+  },
   
-  // {
-  //   date: '2017 - 2019',
-  //   title: 'Frontend Developer at StartUp Labs',
-  //   description: 'Developed user interfaces with React, implemented responsive designs, and collaborated with UX team.',
-  //   color: 'green'
-  // },
+  {
+    date: '2023',
+    title: 'java Full Stack Development Course ',
+    description: 'I did Complete  java Full Stack Development Course in qspider.',
+    color: 'green'
+  }
   // {
   //   date: '2016 - 2017',
   //   title: 'Junior Developer at Tech Innovators',

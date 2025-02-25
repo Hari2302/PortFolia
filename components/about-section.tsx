@@ -3,7 +3,6 @@
 import { motion } from 'framer-motion'
 import { PinCard } from './pin-card'
 import { useState } from 'react'
-import { ChevronLeft, ChevronRight } from 'lucide-react'
 
 const skills = [
   { name: 'JavaFullStack', icon: '☕', description: 'Developing end-to-end applications' },
@@ -17,19 +16,16 @@ const skills = [
 ]
 
 export function AboutSection() {
-  const [startIndex, setStartIndex] = useState(0)
-  const visibleSkills = skills.slice(startIndex, startIndex + 4)
+  const [visibleCount, setVisibleCount] = useState(4)
+  const [expanded, setExpanded] = useState(false)
 
-  const nextSlide = () => {
-    if (startIndex + 4 < skills.length) {
-      setStartIndex(startIndex + 1)
+  const toggleSkills = () => {
+    if (expanded) {
+      setVisibleCount(4) // Show only 4
+    } else {
+      setVisibleCount(skills.length) // Show all
     }
-  }
-
-  const prevSlide = () => {
-    if (startIndex > 0) {
-      setStartIndex(startIndex - 1)
-    }
+    setExpanded(!expanded)
   }
 
   return (
@@ -68,49 +64,40 @@ export function AboutSection() {
               cutting-edge technologies.
             </p>
 
-            {/* Skills Section with Navigation */}
-            <div className="relative flex items-center">
-              {/* Left Arrow */}
-              <button 
-                onClick={prevSlide} 
-                disabled={startIndex === 0} 
-                className="p-2 text-white bg-black rounded-full hover:bg-black hover:text-blue-500 disabled:opacity-50"
-              >
-                <ChevronLeft size={24} />
-              </button>
+            {/* Skills List */}
+            <motion.div 
+              className="grid grid-cols-2 gap-4"
+              animate={{ height: expanded ? 'auto' : '240px' }} // Smooth height transition
+              transition={{ duration: 0.4 }}
+            >
+              {skills.slice(0, visibleCount).map((skill, index) => (
+                <motion.div
+                  key={skill.name}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                >
+                  <PinCard>
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="text-2xl">{skill.icon}</span>
+                      <span className="font-medium">{skill.name}</span>
+                    </div>
+                    <p className="text-sm text-muted-foreground">
+                      {skill.description}
+                    </p>
+                  </PinCard>
+                </motion.div>
+              ))}
+            </motion.div>
 
-              {/* Skills List */}
-              <div className="grid grid-cols-2 gap-4 flex-1 px-4">
-                {visibleSkills.map((skill, index) => (
-                  <motion.div
-                    key={skill.name}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.1 }}
-                  >
-                    <PinCard>
-                      <div className="flex items-center gap-2 mb-2">
-                        <span className="text-2xl">{skill.icon}</span>
-                        <span className="font-medium">{skill.name}</span>
-                      </div>
-                      <p className="text-sm text-muted-foreground">
-                        {skill.description}
-                      </p>
-                    </PinCard>
-                  </motion.div>
-                ))}
-              </div>
-
-              {/* Right Arrow */}
-              <button 
-                onClick={nextSlide} 
-                disabled={startIndex + 4 >= skills.length} 
-                className="p-2 text-white bg-black rounded-full hover:bg-black hover:text-blue-500 disabled:opacity-50"
-              >
-                <ChevronRight size={24} />
-              </button>
-            </div>
+            {/* Show More / Show Less Button */}
+            <button 
+              onClick={toggleSkills} 
+              className="mt-6 px-6 py-3 mx-auto block bg-black text-white rounded-lg hover:bg-gray-800 transition"
+            >
+              {expanded ? 'Show Less' : 'Show More'}
+            </button>
           </div>
         </motion.div>
       </div>
