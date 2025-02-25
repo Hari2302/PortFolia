@@ -5,7 +5,8 @@ import { Badge } from '@/components/ui/badge'
 
 const skills = [
   { name: 'Core Java', level: 'Advanced' },
-  { name: 'TypeScript', level: 'Advanced' },
+  { name: 'SpringBoot', level: 'Advanced' },
+  { name: 'JavaScript', level: 'Advanced' },
   { name: 'C#', level: 'Intermediate' },
   { name: 'SQL', level: 'Intermediate' },
   { name: 'PHP', level: 'Advanced' },
