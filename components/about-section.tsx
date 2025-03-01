@@ -9,7 +9,6 @@ const skills = [
   { name: 'C#', icon: '🔷', description: 'Building robust Windows and web applications' },
   { name: '.NET', icon: '🖥️', description: 'Framework for scalable web and desktop solutions' },
   { name: 'PHP', icon: '🐘', description: 'Server-side scripting for dynamic websites' },
-  { name: 'Laravel', icon: '🌟', description: 'Elegant web applications with PHP' },
   { name: 'JavaScript', icon: '🚀', description: 'Dynamic and interactive web development' },
   { name: 'TypeScript', icon: '🔹', description: 'Strongly typed JavaScript for scalable applications' },
   { name: 'WordPress', icon: '🌍', description: 'Creating and managing websites with ease' }
