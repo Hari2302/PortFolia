@@ -7,11 +7,11 @@ const skills = [
   { name: 'Core Java', level: 'Advanced' },
   { name: 'SpringBoot', level: 'Advanced' },
   { name: 'JavaScript', level: 'Advanced' },
+  { name: 'TypeScript', level: 'Basic' },
   { name: 'C#', level: 'Intermediate' },
   { name: 'SQL', level: 'Intermediate' },
   { name: 'PHP', level: 'Advanced' },
   { name: 'Dot Net', level: 'Advanced' },
-  { name: 'Laravel', level: 'Intermediate' },
   { name: 'WordPress', level: 'Intermediate' },
 
 ]
