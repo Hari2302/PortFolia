@@ -53,7 +53,7 @@ export function HeroSection() {
           >
             {/* View & Download Resume Button */}
             <motion.a
-              href="Resume/Hari cv.pdf.pdf" // Make sure 'resume.pdf' is in the public folder
+              href="Resume/Hari-25.pdf" // Make sure 'resume.pdf' is in the public folder
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-md px-6 py-3 text-sm font-medium bg-primary text-primary-foreground shadow hover:bg-primary/90 group relative overflow-hidden"
