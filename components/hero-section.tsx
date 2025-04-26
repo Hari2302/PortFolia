@@ -4,7 +4,7 @@ import { motion, useScroll, useTransform } from 'framer-motion'
 import { Download, Mail } from 'lucide-react'
 import React from 'react'
 
-const roles = ["PHP Developer", "Java Full Stack Developer", "Problem Solver", "C#/.NET Developer"]
+const roles = [ "Java Full Stack Developer"]
 
 export function HeroSection() {
   const { scrollY } = useScroll()
